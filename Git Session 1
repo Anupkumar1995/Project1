@@ -1,0 +1,494 @@
+[ec2-user@ip-172-31-47-103 project]$ ls -l
+total 4
+-rw-r--r--. 1 ec2-user ec2-user 44 Jul 15 09:53 program.txt
+[ec2-user@ip-172-31-47-103 project]$ yum repolist all
+repo id                                            repo name                                                                                  status
+amazonlinux                                        Amazon Linux 2023 repository                                                               enabled
+amazonlinux-debuginfo                              Amazon Linux 2023 repository - Debug                                                       disabled
+amazonlinux-source                                 Amazon Linux 2023 repository - Source packages                                             disabled
+kernel-livepatch                                   Amazon Linux 2023 Kernel Livepatch repository                                              enabled
+kernel-livepatch-source                            Amazon Linux 2023 Kernel Livepatch repository - Source packages                            disabled
+[ec2-user@ip-172-31-47-103 project]$ git init
+Reinitialized existing Git repository in /home/ec2-user/project/.git/
+[ec2-user@ip-172-31-47-103 project]$ git ls-files
+program.txt
+[ec2-user@ip-172-31-47-103 project]$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+[ec2-user@ip-172-31-47-103 project]$ git branch
+  dev
+* main
+[ec2-user@ip-172-31-47-103 project]$ git log
+commit e7594fa80a32b3a14f75cf8a1815aa64cb865a70 (HEAD -> main, origin/main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:58:36 2023 +0000
+
+    v2
+
+commit e081c59bf466ea085e58371417b13e05c65ffd7f
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:51:32 2023 +0000
+
+    v1
+[ec2-user@ip-172-31-47-103 project]$ git ls-files
+program.txt
+[ec2-user@ip-172-31-47-103 project]$ cat program.txt
+Hi This is First Line.
+This is Second Line.
+[ec2-user@ip-172-31-47-103 project]$ vi program.txt
+[ec2-user@ip-172-31-47-103 project]$ cat program.txt
+Hi This is First Line.
+This is Second Line.
+Hi  This is Third Line.
+[ec2-user@ip-172-31-47-103 project]$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   program.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[ec2-user@ip-172-31-47-103 project]$ git add .
+[ec2-user@ip-172-31-47-103 project]$ git commit . -m "v3"
+[main 36c3b6c] v3
+ Committer: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+[ec2-user@ip-172-31-47-103 project]$ git log
+commit 36c3b6cb97e0251dbfe0c1dd69b46444cc7acbc0 (HEAD -> main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Mon Jul 17 06:13:55 2023 +0000
+
+    v3
+
+commit e7594fa80a32b3a14f75cf8a1815aa64cb865a70 (origin/main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:58:36 2023 +0000
+
+    v2
+
+commit e081c59bf466ea085e58371417b13e05c65ffd7f
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:51:32 2023 +0000
+
+    v1
+[ec2-user@ip-172-31-47-103 project]$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+[ec2-user@ip-172-31-47-103 project]$ which branch
+/usr/bin/which: no branch in (/home/ec2-user/.local/bin:/home/ec2-user/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin)
+[ec2-user@ip-172-31-47-103 project]$ whereis branch
+branch:
+[ec2-user@ip-172-31-47-103 project]$ git branch
+  dev
+* main
+[ec2-user@ip-172-31-47-103 project]$ ll
+total 4
+-rw-r--r--. 1 ec2-user ec2-user 68 Jul 17 06:13 program.txt
+[ec2-user@ip-172-31-47-103 project]$ rm program.txt
+[ec2-user@ip-172-31-47-103 project]$ ll
+total 0
+[ec2-user@ip-172-31-47-103 project]$ ls -l
+total 0
+[ec2-user@ip-172-31-47-103 project]$ git ls-files
+program.txt
+[ec2-user@ip-172-31-47-103 project]$ git log
+commit 36c3b6cb97e0251dbfe0c1dd69b46444cc7acbc0 (HEAD -> main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Mon Jul 17 06:13:55 2023 +0000
+
+    v3
+
+commit e7594fa80a32b3a14f75cf8a1815aa64cb865a70 (origin/main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:58:36 2023 +0000
+
+    v2
+
+commit e081c59bf466ea085e58371417b13e05c65ffd7f
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:51:32 2023 +0000
+
+    v1
+[ec2-user@ip-172-31-47-103 project]$ git checkout program.txt
+Updated 1 path from the index
+[ec2-user@ip-172-31-47-103 project]$ ll
+total 4
+-rw-r--r--. 1 ec2-user ec2-user 68 Jul 17 06:16 program.txt
+[ec2-user@ip-172-31-47-103 project]$ cat program.txt
+Hi This is First Line.
+This is Second Line.
+Hi  This is Third Line.
+[ec2-user@ip-172-31-47-103 project]$ git log
+commit 36c3b6cb97e0251dbfe0c1dd69b46444cc7acbc0 (HEAD -> main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Mon Jul 17 06:13:55 2023 +0000
+
+    v3
+
+commit e7594fa80a32b3a14f75cf8a1815aa64cb865a70 (origin/main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:58:36 2023 +0000
+
+    v2
+
+commit e081c59bf466ea085e58371417b13e05c65ffd7f
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:51:32 2023 +0000
+
+    v1
+[ec2-user@ip-172-31-47-103 project]$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+[ec2-user@ip-172-31-47-103 project]$ ls
+program.txt
+[ec2-user@ip-172-31-47-103 project]$ ls -l
+total 4
+-rw-r--r--. 1 ec2-user ec2-user 68 Jul 17 06:16 program.txt
+[ec2-user@ip-172-31-47-103 project]$ rm program.txt
+[ec2-user@ip-172-31-47-103 project]$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    program.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[ec2-user@ip-172-31-47-103 project]$ git log
+commit 36c3b6cb97e0251dbfe0c1dd69b46444cc7acbc0 (HEAD -> main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Mon Jul 17 06:13:55 2023 +0000
+
+    v3
+
+commit e7594fa80a32b3a14f75cf8a1815aa64cb865a70 (origin/main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:58:36 2023 +0000
+
+    v2
+
+commit e081c59bf466ea085e58371417b13e05c65ffd7f
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:51:32 2023 +0000
+
+    v1
+[ec2-user@ip-172-31-47-103 project]$ git checkout e081c59bf466ea085e58371417b13e05c65ffd7f
+Note: switching to 'e081c59bf466ea085e58371417b13e05c65ffd7f'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at e081c59 v1
+[ec2-user@ip-172-31-47-103 project]$ ll
+total 4
+-rw-r--r--. 1 ec2-user ec2-user 23 Jul 17 06:19 program.txt
+[ec2-user@ip-172-31-47-103 project]$ cat program.txt
+Hi This is First Line.
+[ec2-user@ip-172-31-47-103 project]$ git log
+commit e081c59bf466ea085e58371417b13e05c65ffd7f (HEAD)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:51:32 2023 +0000
+
+    v1
+[ec2-user@ip-172-31-47-103 project]$ git status
+HEAD detached at e081c59
+nothing to commit, working tree clean
+[ec2-user@ip-172-31-47-103 project]$ ls -l
+total 4
+-rw-r--r--. 1 ec2-user ec2-user 23 Jul 17 06:19 program.txt
+[ec2-user@ip-172-31-47-103 project]$ cat program.txt
+Hi This is First Line.
+[ec2-user@ip-172-31-47-103 project]$ git status
+HEAD detached at e081c59
+nothing to commit, working tree clean
+[ec2-user@ip-172-31-47-103 project]$ git log
+commit e081c59bf466ea085e58371417b13e05c65ffd7f (HEAD)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:51:32 2023 +0000
+
+    v1
+[ec2-user@ip-172-31-47-103 project]$ git checkout
+[ec2-user@ip-172-31-47-103 project]$ ll
+total 4
+-rw-r--r--. 1 ec2-user ec2-user 23 Jul 17 06:19 program.txt
+[ec2-user@ip-172-31-47-103 project]$ git log
+commit e081c59bf466ea085e58371417b13e05c65ffd7f (HEAD)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:51:32 2023 +0000
+
+    v1
+[ec2-user@ip-172-31-47-103 project]$ git checkout 36c3b6cb97e0251dbfe0c1dd69b46444cc7acbc0
+Previous HEAD position was e081c59 v1
+HEAD is now at 36c3b6c v3
+[ec2-user@ip-172-31-47-103 project]$ git log
+commit 36c3b6cb97e0251dbfe0c1dd69b46444cc7acbc0 (HEAD, main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Mon Jul 17 06:13:55 2023 +0000
+
+    v3
+
+commit e7594fa80a32b3a14f75cf8a1815aa64cb865a70 (origin/main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:58:36 2023 +0000
+
+    v2
+
+commit e081c59bf466ea085e58371417b13e05c65ffd7f
+[ec2-user@ip-172-31-47-103 project]$ git branch
+  dev
+* main
+[ec2-user@ip-172-31-47-103 project]$ git checkout dev
+Switched to branch 'dev'
+Your branch is up to date with 'origin/dev'.
+[ec2-user@ip-172-31-47-103 project]$ git ls-files
+dev.txt
+program.txt
+[ec2-user@ip-172-31-47-103 project]$ git branch qa
+[ec2-user@ip-172-31-47-103 project]$ git branch
+* dev
+  main
+  qa
+[ec2-user@ip-172-31-47-103 project]$ git checkout qa
+Switched to branch 'qa'
+[ec2-user@ip-172-31-47-103 project]$ git ls-files
+dev.txt
+program.txt
+[ec2-user@ip-172-31-47-103 project]$ vi dev.txt
+[ec2-user@ip-172-31-47-103 project]$ cat dev.txt
+Hithis dev first Line.
+Jai Shree Ram.
+[ec2-user@ip-172-31-47-103 project]$ git add .
+[ec2-user@ip-172-31-47-103 project]$ git commit . -m "Dev:4"
+[qa 0e9e739] Dev:4
+ Committer: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+)
+[ec2-user@ip-172-31-47-103 project]$ git status
+On branch qa
+nothing to commit, working tree clean
+[ec2-user@ip-172-31-47-103 project]$ git log
+commit 0e9e739155e6d2beb8e83efb7380db977d617c01 (HEAD -> qa)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Mon Jul 17 06:28:08 2023 +0000
+
+    Dev:4
+
+commit d9cfb47f8292b203c14f3e72c056284979dcf4d2 (origin/dev, dev)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 18:17:53 2023 +0000
+
+    dev commit
+
+commit e7594fa80a32b3a14f75cf8a1815aa64cb865a70 (origin/main)
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:58:36 2023 +0000
+
+    v2
+
+commit e081c59bf466ea085e58371417b13e05c65ffd7f
+Author: EC2 Default User <ec2-user@ip-172-31-47-103.ap-south-1.compute.internal>
+Date:   Sat Jul 15 09:51:32 2023 +0000
+
+    v1
+[ec2-user@ip-172-31-47-103 project]$ git branch
+  dev
+  main
+* qa
+[ec2-user@ip-172-31-47-103 project]$ git ls-files
+dev.txt
+program.txt
+[ec2-user@ip-172-31-47-103 project]$ history
+    1  mkdir anoop
+    2  ls -l
+    3  rm anoop
+    4  rm -r anoop
+    5  which git
+    6  whereis git
+    7  yum repolist
+    8  yum repolist all
+    9  yum list | grep git
+   10  yum install git
+   11  sudo yum install git
+   12  ls -l
+   13  ls -la
+   14  mkdir project
+   15  cd project
+   16  touch program.txt
+   17  ls -l
+   18  vi program.txt
+   19  cat program.txt
+   20  vi program.txt
+   21  cat program.txt
+   22  ls -l
+   23  git init
+   24  git status
+   25  git add program.txt
+   26  git status
+   27  git commit . -m "v1"
+   28  git config --globle --edit
+   29  git config --global --edit
+   30  git commit --amend --reset-author
+   31  git status
+   32  ls -l
+   33  git ls-files
+   34  vi program.txt
+   35  git status
+   36  git add
+   37  git add .
+   38  git status
+   39  git resre --staged program.txt
+   40  git retore --staged program.txt
+   41  git restore --staged program.txt
+   42  git add .
+   43  git commit  . -m "v2"
+   44  git status
+   45  ls
+   46  git ls-files
+   47  cd project/
+   48  git ls-files
+   49  git branch
+   50  git branch dev
+   51  git branch
+   52  git checkout dev
+   53  git branch
+   54  git ls-files
+   55  touch dev.txt
+   56  git ls-files
+   57  git status
+   58  git add .
+   59  git status
+   60  git commit -m "dev commit"
+   61  git status
+   62  git branch
+   63  git checkout master
+   64  git branch
+   65  git branch -m main
+   66  git branch
+   67  git remote add origin https://github.com/Anupkumar1995/Project1.git
+   68  git remote
+   69  git remote -v
+   70  git status
+   71  git push -u main
+   72  git push -u origin  main
+   73  git push -u origin main
+   74  git status
+   75  git branch
+   76  git push -u origin dev
+   77  git status
+   78  ls
+   79  ls -l
+   80  cd project
+   81  ls
+   82  ls -l
+   83  yum repolist all
+   84  git init
+   85  git ls-files
+   86  git status
+   87  git branch
+   88  git log
+   89  git ls-files
+   90  cat program.txt
+   91  vi program.txt
+   92  cat program.txt
+   93  git status
+   94  git add .
+   95  git commit . -m "v3"
+   96  git log
+   97  git status
+   98  which branch
+   99  whereis branch
+  100  git branch
+  101  ll
+  102  rm program.txt
+  103  ll
+  104  ls -l
+  105  git ls-files
+  106  git log
+  107  git checkout program.txt
+  108  ll
+  109  cat program.txt
+  110  git log
+  111  git status
+  112  ls
+  113  ls -l
+  114  rm program.txt
+  115  git status
+  116  git log
+  117  git checkout e081c59bf466ea085e58371417b13e05c65ffd7f
+  118  ll
+  119  cat program.txt
+  120  git log
+  121  git status
+  122  ls -l
+  123  cat program.txt
+  124  git status
+  125  git log
+  126  git checkout
+  127  ll
+  128  git log
+  129  git checkout 36c3b6cb97e0251dbfe0c1dd69b46444cc7acbc0
+  130  git log
+  131  git checkout main
+  132  git branch
+  133  git log
+  134  git branch
+  135  git checkout dev
+  136  git ls-files
+  137  git branch qa
+  138  git branch
+  139  git checkout qa
+  140  git ls-files
+  141  vi dev.txt
+  142  cat dev.txt
+  143  git add .
+  144  git commit . -m "Dev:4"
+  145  git status
+  146  git log
+  147  git branch
+  148  git ls-files
+  149  history
