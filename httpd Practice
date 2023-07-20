@@ -1,0 +1,339 @@
+[root@ip-172-31-47-103 soft]# history
+    1  ll
+    2  cd soft
+    3  gunzip httpd-2.4.57.tar.gz
+    4  ls
+    5  tar -xzvt httpd-2.4.57.tar
+    6  ll
+    7  gzip httpd-2.4.57.tar
+    8  ll
+    9  tar --help
+   10  ll
+   11  tar -xvf httpd-2.4.57.tar.gz
+   12  ll
+   13  cd httpd-2.4.57
+   14  ll
+   15  ls
+   16  clear
+   17  ./configure
+   18  yum list | grep apr
+   19  yum install apr
+   20  ./configure
+   21  yum install apr
+   22  yum install apr-devel
+   23  ./configure
+   24  yum install apr-util-devel
+   25  ./configure
+   26  cat config.log
+   27  yum install gcc
+   28  ./configure
+   29  yum install pcre
+   30  ./configure
+   31  yum list |grep pcre
+   32  yum install pcre-devel
+   33  ./configure
+   34  which make
+   35  make
+   36  make install
+   37  cd /usr/local
+   38  ll
+   39  cd apache2
+   40  ll
+   41  cd bin
+   42  ll
+   43  ./apachectl -k start
+   44  ps -ef | grep httpd
+   45  ./apachectl -k start
+   46  cd ..
+   47  pwd
+   48  cd .. /../../..
+   49  cd ..
+   50  ll
+   51  cd ..
+   52  cd ..
+   53  ll
+   54  cd /home
+   55  ll
+   56  cd /ec2-user
+   57  cd ec2-user
+   58  ll
+   59  cd soft
+   60  git clone https://github.com/Revumadhu/hello-world-1.git
+   61  ll
+   62  cd hello-world.
+   63  cd hello-world-1
+   64  ll
+   65  ll
+   66  cd ..
+   67  history
+[root@ip-172-31-47-103 soft]# ll
+total 9628
+drwxr-xr-x.  5 root     root          96 Jul 20 07:39 hello-world-1
+drwxr-xr-x. 14      501 games      16384 Jul 20 07:18 httpd-2.4.57
+-rw-r--r--.  1 ec2-user ec2-user 9840482 Apr  6 14:46 httpd-2.4.57.tar.gz
+[root@ip-172-31-47-103 soft]# cd httpd-2.4.57
+[root@ip-172-31-47-103 httpd-2.4.57]# ll
+total 3508
+-rw-r--r--.  1  501 games   13497 Feb 21  2020 ABOUT_APACHE
+-rw-r--r--.  1  501 games   66792 Mar 26  2019 Apache-apr2.dsw
+-rw-r--r--.  1  501 games   81919 Mar 26  2019 Apache.dsw
+-rw-r--r--.  1  501 games    2644 Aug 24  2007 BuildAll.dsp
+-rw-r--r--.  1  501 games    2784 Jan 14  2018 BuildBin.dsp
+-rw-r--r--.  1  501 games  345837 Mar 31 15:09 CHANGES
+-rw-r--r--.  1  501 games   48119 Jan  9  2023 CMakeLists.txt
+-rw-r--r--.  1  501 games    3782 May 17  2016 INSTALL
+-rw-r--r--.  1  501 games    2909 Nov 15  2011 InstallBin.dsp
+-rw-r--r--.  1  501 games    4097 Nov 15  2013 LAYOUT
+-rw-r--r--.  1  501 games   25479 Jan 14  2020 LICENSE
+-rw-r--r--.  1 root root    12215 Jul 20 07:13 Makefile
+-rw-r--r--.  1  501 games   11975 Nov 29  2022 Makefile.in
+-rw-r--r--.  1  501 games   53749 Mar 26  2019 Makefile.win
+-rw-r--r--.  1  501 games     721 Jan 17  2023 NOTICE
+-rw-r--r--.  1  501 games   13884 Mar 20  2016 NWGNUmakefile
+-rw-r--r--.  1  501 games    4650 Feb 16 19:25 README
+-rw-r--r--.  1  501 games    1033 Sep 15  2020 README.CHANGES
+-rw-r--r--.  1  501 games   13317 Mar 23  2016 README.cmake
+-rw-r--r--.  1  501 games    4418 Aug 27  2014 README.platforms
+-rw-r--r--.  1  501 games   10184 Feb 21  2020 ROADMAP
+-rw-r--r--.  1  501 games    8186 Feb 21  2020 VERSIONING
+-rw-r--r--.  1  501 games   26049 Dec 13  2021 acinclude.m4
+-rw-r--r--.  1  501 games    2512 Dec 21  2008 ap.d
+-rw-r--r--.  1  501 games    9907 Dec 18  2009 apache_probes.d
+drwxr-xr-x.  6  501 games   16384 Jul 20 07:20 build
+-rwxr-xr-x.  1  501 games   10679 Sep  8  2017 buildconf
+-rw-r--r--.  1 root root     1504 Jul 20 07:18 buildmark.o
+drwxr-xr-x.  2  501 games       6 Apr  2 16:05 changes-entries
+-rw-r--r--.  1  501 games   14180 Feb 21  2020 config.layout
+-rw-r--r--.  1 root root   100395 Jul 20 07:13 config.log
+-rwxr-xr-x.  1 root root       58 Jul 20 07:13 config.nice
+-rwxr-xr-x.  1 root root    43765 Jul 20 07:13 config.status
+-rwxr-xr-x.  1  501 games 1265154 Apr  2 16:05 configure
+-rw-r--r--.  1  501 games   31253 Jun  4  2022 configure.in
+drwxr-xr-x. 10  501 games     145 Jul 20 06:58 docs
+-rw-r--r--.  1  501 games     403 Nov 21  2004 emacs-style
+-rwxr-xr-x.  1 root root   976072 Jul 20 07:18 httpd
+-rw-r--r--.  1  501 games    2218 Mar 23  2016 httpd.dep
+-rw-r--r--.  1  501 games    4124 Jun 11  2008 httpd.dsp
+-rw-r--r--.  1  501 games    8994 Mar 23  2016 httpd.mak
+-rw-r--r--.  1  501 games   17313 Apr  2 16:05 httpd.spec
+drwxr-xr-x.  2  501 games   16384 Jul 20 07:13 include
+-rw-r--r--.  1  501 games   79070 Mar 23  2016 libhttpd.dep
+-rw-r--r--.  1  501 games   21656 May 12  2021 libhttpd.dsp
+-rw-r--r--.  1  501 games   39216 May 13  2021 libhttpd.mak
+drwxr-xr-x. 29  501 games   16384 Jul 20 07:13 modules
+-rw-r--r--.  1 root root     1233 Jul 20 07:13 modules.c
+-rw-r--r--.  1 root root      260 Jul 20 07:18 modules.lo
+-rw-r--r--.  1 root root     2048 Jul 20 07:18 modules.o
+drwxr-xr-x.  7  501 games     155 Jul 20 07:13 os
+drwxr-xr-x.  4  501 games   16384 Jul 20 07:18 server
+drwxr-xr-x.  2  501 games      54 Jul 20 07:13 srclib
+drwxr-xr-x.  5  501 games   16384 Jul 20 07:18 support
+drwxr-xr-x.  4  501 games   16384 Jul 20 07:13 test
+[root@ip-172-31-47-103 httpd-2.4.57]# ls
+ABOUT_APACHE     CMakeLists.txt  Makefile.in     README.cmake      apache_probes.d  config.log     emacs-style  include       modules.lo  test
+Apache-apr2.dsw  INSTALL         Makefile.win    README.platforms  build            config.nice    httpd        libhttpd.dep  modules.o
+Apache.dsw       InstallBin.dsp  NOTICE          ROADMAP           buildconf        config.status  httpd.dep    libhttpd.dsp  os
+BuildAll.dsp     LAYOUT          NWGNUmakefile   VERSIONING        buildmark.o      configure      httpd.dsp    libhttpd.mak  server
+BuildBin.dsp     LICENSE         README          acinclude.m4      changes-entries  configure.in   httpd.mak    modules       srclib
+CHANGES          Makefile        README.CHANGES  ap.d              config.layout    docs           httpd.spec   modules.c     support
+[root@ip-172-31-47-103 httpd-2.4.57]# cd ..
+[root@ip-172-31-47-103 soft]# cd /usr/local
+[root@ip-172-31-47-103 local]# ll
+total 0
+drwxr-xr-x. 14 root root 164 Jul 20 07:20 apache2
+drwxr-xr-x.  2 root root   6 Jan 30 02:31 bin
+drwxr-xr-x.  2 root root   6 Jan 30 02:31 etc
+drwxr-xr-x.  2 root root   6 Jan 30 02:31 games
+drwxr-xr-x.  2 root root   6 Jan 30 02:31 include
+drwxr-xr-x.  2 root root   6 Jan 30 02:31 lib
+drwxr-xr-x.  3 root root  17 Jul  5 17:44 lib64
+drwxr-xr-x.  2 root root   6 Jan 30 02:31 libexec
+drwxr-xr-x.  2 root root   6 Jan 30 02:31 sbin
+drwxr-xr-x.  5 root root  49 Jul  5 17:44 share
+drwxr-xr-x.  2 root root   6 Jan 30 02:31 src
+[root@ip-172-31-47-103 local]# cd /apache2
+bash: cd: /apache2: No such file or directory
+[root@ip-172-31-47-103 local]# cd/bin
+bash: cd/bin: No such file or directory
+[root@ip-172-31-47-103 local]# cd apache2
+[root@ip-172-31-47-103 apache2]# ll
+total 96
+drwxr-xr-x.  2 root root 16384 Jul 20 07:19 bin
+drwxr-xr-x.  2 root root   167 Jul 20 07:20 build
+drwxr-xr-x.  2 root root    78 Jul 20 07:19 cgi-bin
+drwxr-xr-x.  4 root root    84 Jul 20 07:19 conf
+drwxr-xr-x.  3 root root 16384 Jul 20 07:19 error
+drwxr-xr-x.  2 root root    24 Jul 20 06:58 htdocs
+drwxr-xr-x.  3 root root 16384 Jul 20 07:19 icons
+drwxr-xr-x.  2 root root 16384 Jul 20 07:20 include
+drwxr-xr-x.  2 root root    58 Jul 20 07:22 logs
+drwxr-xr-x.  4 root root    30 Jul 20 07:20 man
+drwxr-xr-x. 14 root root 16384 Jul 20 06:58 manual
+drwxr-xr-x.  2 root root 16384 Jul 20 07:19 modules
+[root@ip-172-31-47-103 apache2]# cd bin
+[root@ip-172-31-47-103 bin]# ll
+total 1380
+-rwxr-xr-x. 1 root root  64344 Jul 20 07:19 ab
+-rwxr-xr-x. 1 root root   3437 Jul 20 07:13 apachectl
+-rwxr-xr-x. 1 root root  23879 Jul 20 07:13 apxs
+-rwxr-xr-x. 1 root root  25224 Jul 20 07:19 checkgid
+-rwxr-xr-x. 1 root root   8925 Jul 20 07:13 dbmmanage
+-rw-r--r--. 1 root root   1073 Jul 20 07:13 envvars
+-rw-r--r--. 1 root root   1073 Jul 20 07:13 envvars-std
+-rwxr-xr-x. 1 root root  26256 Jul 20 07:19 fcgistarter
+-rwxr-xr-x. 1 root root  53384 Jul 20 07:19 htcacheclean
+-rwxr-xr-x. 1 root root  40496 Jul 20 07:19 htdbm
+-rwxr-xr-x. 1 root root  26528 Jul 20 07:19 htdigest
+-rwxr-xr-x. 1 root root  35856 Jul 20 07:19 htpasswd
+-rwxr-xr-x. 1 root root 976072 Jul 20 07:19 httpd
+-rwxr-xr-x. 1 root root  26208 Jul 20 07:19 httxt2dbm
+-rwxr-xr-x. 1 root root  26856 Jul 20 07:19 logresolve
+-rwxr-xr-x. 1 root root  39840 Jul 20 07:19 rotatelogs
+[root@ip-172-31-47-103 bin]# ./apachectl -k start
+httpd (pid 36289) already running
+[root@ip-172-31-47-103 bin]# ps -ep | grep httpd
+error: list of process IDs must follow -p
+
+Usage:
+ ps [options]
+
+ Try 'ps --help <simple|list|output|threads|misc|all>'
+  or 'ps --help <s|l|o|t|m|a>'
+ for additional help text.
+
+For more details see ps(1).
+[root@ip-172-31-47-103 bin]# ps -ef | grep httpd
+root       36289       1  0 07:22 ?        00:00:00 /usr/local/apache2/bin/httpd -k start
+daemon     36290   36289  0 07:22 ?        00:00:00 /usr/local/apache2/bin/httpd -k start
+daemon     36291   36289  0 07:22 ?        00:00:00 /usr/local/apache2/bin/httpd -k start
+daemon     36292   36289  0 07:22 ?        00:00:00 /usr/local/apache2/bin/httpd -k start
+root       37632    2946  0 08:05 pts/0    00:00:00 grep --color=auto httpd
+[root@ip-172-31-47-103 bin]# cd /home
+[root@ip-172-31-47-103 home]# ll
+total 0
+drwx------. 5 ec2-user ec2-user 172 Jul 20 06:46 ec2-user
+[root@ip-172-31-47-103 home]# ls
+ec2-user
+[root@ip-172-31-47-103 home]# ll
+total 0
+drwx------. 5 ec2-user ec2-user 172 Jul 20 06:46 ec2-user
+[root@ip-172-31-47-103 home]# ls -l
+total 0
+drwx------. 5 ec2-user ec2-user 172 Jul 20 06:46 ec2-user
+[root@ip-172-31-47-103 home]# cd ec2-user
+[root@ip-172-31-47-103 ec2-user]# ll
+total 0
+drwxr-xr-x. 3 ec2-user ec2-user 52 Jul 17 06:27 project
+drwxr-xr-x. 4 ec2-user ec2-user 74 Jul 20 07:39 soft
+[root@ip-172-31-47-103 ec2-user]# ifconfig
+enX0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.47.103  netmask 255.255.240.0  broadcast 172.31.47.255
+        inet6 fe80::8c:28ff:fe5b:a96  prefixlen 64  scopeid 0x20<link>
+        ether 02:8c:28:5b:0a:96  txqueuelen 1000  (Ethernet)
+        RX packets 63257  bytes 71503776 (68.1 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 21450  bytes 2615854 (2.4 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 24  bytes 2040 (1.9 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 24  bytes 2040 (1.9 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@ip-172-31-47-103 ec2-user]# history
+    1  ll
+    2  cd soft
+    3  gunzip httpd-2.4.57.tar.gz
+    4  ls
+    5  tar -xzvt httpd-2.4.57.tar
+    6  ll
+    7  gzip httpd-2.4.57.tar
+    8  ll
+    9  tar --help
+   10  ll
+   11  tar -xvf httpd-2.4.57.tar.gz
+   12  ll
+   13  cd httpd-2.4.57
+   14  ll
+   15  ls
+   16  clear
+   17  ./configure
+   18  yum list | grep apr
+   19  yum install apr
+   20  ./configure
+   21  yum install apr
+   22  yum install apr-devel
+   23  ./configure
+   24  yum install apr-util-devel
+   25  ./configure
+   26  cat config.log
+   27  yum install gcc
+   28  ./configure
+   29  yum install pcre
+   30  ./configure
+   31  yum list |grep pcre
+   32  yum install pcre-devel
+   33  ./configure
+   34  which make
+   35  make
+   36  make install
+   37  cd /usr/local
+   38  ll
+   39  cd apache2
+   40  ll
+   41  cd bin
+   42  ll
+   43  ./apachectl -k start
+   44  ps -ef | grep httpd
+   45  ./apachectl -k start
+   46  cd ..
+   47  pwd
+   48  cd .. /../../..
+   49  cd ..
+   50  ll
+   51  cd ..
+   52  cd ..
+   53  ll
+   54  cd /home
+   55  ll
+   56  cd /ec2-user
+   57  cd ec2-user
+   58  ll
+   59  cd soft
+   60  git clone https://github.com/Revumadhu/hello-world-1.git
+   61  ll
+   62  cd hello-world.
+   63  cd hello-world-1
+   64  ll
+   65  ll
+   66  cd ..
+   67  history
+   68  ll
+   69  cd httpd-2.4.57
+   70  ll
+   71  ls
+   72  cd ..
+   73  cd /usr/local
+   74  ll
+   75  cd /apache2
+   76  cd/bin
+   77  cd apache2
+   78  ll
+   79  cd bin
+   80  ll
+   81  ./apachectl -k start
+   82  ps -ep | grep httpd
+   83  ps -ef | grep httpd
+   84  cd /home
+   85  ll
+   86  ls
+   87  ll
+   88  ls -l
+   89  cd ec2-user
+   90  ll
+   91  ifconfig
+   92  history
